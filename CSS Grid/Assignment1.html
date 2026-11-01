@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment I - CSS Grid</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #f3f5f8;
+        color: #222;
+        padding: 24px;
+      }
+      h1 {
+        text-align: center;
+        color: #17324d;
+        margin: 10px 0 28px;
+      }
+      h2 {
+        font-size: 21px;
+        margin-bottom: 18px;
+        color: #24556b;
+      }
+      .assignment {
+        max-width: 1100px;
+        margin: 24px auto;
+        background: #fff;
+        padding: 24px;
+        border-radius: 10px;
+        box-shadow: 0 2px 12px #00000012;
+      }
+
+      /* 1. Basic 3 x 3 grid */
+      .basic-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+        gap: 10px;
+        justify-content: center;
+      }
+      .basic-grid div {
+        display: grid;
+        place-items: center;
+        color: #fff;
+        font-size: 25px;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+      .basic-grid div:nth-child(1) {
+        background: #e63946;
+      }
+      .basic-grid div:nth-child(2) {
+        background: #457b9d;
+      }
+      .basic-grid div:nth-child(3) {
+        background: #2a9d8f;
+      }
+      .basic-grid div:nth-child(4) {
+        background: #f4a261;
+      }
+      .basic-grid div:nth-child(5) {
+        background: #6a4c93;
+      }
+      .basic-grid div:nth-child(6) {
+        background: #e76f51;
+      }
+      .basic-grid div:nth-child(7) {
+        background: #264653;
+      }
+      .basic-grid div:nth-child(8) {
+        background: #588157;
+      }
+      .basic-grid div:nth-child(9) {
+        background: #bc6c25;
+      }
+
+      /* 2. Blog page layout */
+      .blog {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 90px 280px 70px;
+        grid-template-areas: "header header" "sidebar content" "footer footer";
+        gap: 10px;
+      }
+      .blog > * {
+        display: grid;
+        place-items: center;
+        padding: 15px;
+        font-weight: bold;
+        color: #fff;
+        border-radius: 5px;
+      }
+      .blog-header {
+        grid-area: header;
+        background: #264653;
+      }
+      .blog-sidebar {
+        grid-area: sidebar;
+        background: #e9a23b;
+      }
+      .blog-content {
+        grid-area: content;
+        background: #6cabb5;
+      }
+      .blog-footer {
+        grid-area: footer;
+        background: #2a9d8f;
+      }
+
+      /* 3. Responsive gallery */
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 14px;
+      }
+      .gallery img {
+        width: 100%;
+        height: 175px;
+        object-fit: cover;
+        border-radius: 7px;
+        display: block;
+      }
+
+      /* 4. Dashboard */
+      .dashboard {
+        display: grid;
+        grid-template-columns: 180px 1fr 180px;
+        grid-template-rows: 70px 55px 260px 65px;
+        grid-template-areas: "head head head" "nav nav nav" "left main right" "foot foot foot";
+        gap: 10px;
+      }
+      .dashboard > * {
+        display: grid;
+        place-items: center;
+        padding: 12px;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      .d-head {
+        grid-area: head;
+        background: #1d3557;
+        color: #fff;
+      }
+      .d-nav {
+        grid-area: nav;
+        background: #457b9d;
+        color: #fff;
+      }
+      .d-left {
+        grid-area: left;
+        background: #f4a261;
+      }
+      .d-main {
+        grid-area: main;
+        background: #a8dadc;
+      }
+      .d-right {
+        grid-area: right;
+        background: #e9c46a;
+      }
+      .d-foot {
+        grid-area: foot;
+        background: #2a9d8f;
+        color: #fff;
+      }
+
+      /* 5. Cards with implicit grid */
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 18px;
+      }
+      .card {
+        border: 1px solid #ddd;
+        border-radius: 9px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 2px 8px #00000012;
+      }
+      .card img {
+        width: 100%;
+        height: 155px;
+        object-fit: cover;
+        display: block;
+      }
+      .card-text {
+        padding: 14px;
+      }
+      .card h3 {
+        color: #24556b;
+        margin-bottom: 8px;
+      }
+      .card p {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #555;
+      }
+      @media (max-width: 650px) {
+        body {
+          padding: 10px;
+        }
+        .assignment {
+          padding: 15px;
+        }
+        .blog {
+          grid-template-columns: 1fr;
+          grid-template-rows: 70px 90px 220px 60px;
+          grid-template-areas: "header" "sidebar" "content" "footer";
+        }
+        .dashboard {
+          grid-template-columns: 1fr;
+          grid-template-rows: 65px 55px 75px 220px 75px 60px;
+          grid-template-areas: "head" "nav" "left" "main" "right" "foot";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS GRID - ASSIGNMENT I</h1>
+
+    <section class="assignment">
+      <h2>Assignment 1: Basic Grid Layout</h2>
+      <p style="margin-bottom: 15px">
+        Create a 3 x 3 grid with 100px by 100px cells and a 10px gap.
+      </p>
+      <div class="basic-grid">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+    </section>
+
+    <section class="assignment">
+      <h2>Assignment 2: Blog Page Layout</h2>
+      <div class="blog">
+        <header class="blog-header">HEADER</header>
+        <aside class="blog-sidebar">SIDEBAR</aside>
+        <main class="blog-content">MAIN CONTENT</main>
+        <footer class="blog-footer">FOOTER</footer>
+      </div>
+    </section>
+
+    <section class="assignment">
+      <h2>Assignment 3: Responsive Image Gallery</h2>
+      <div class="gallery">
+        <img
+          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600"
+          alt="Nature landscape"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600"
+          alt="Sunrise"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600"
+          alt="Mountain lake"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=600"
+          alt="Lake"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600"
+          alt="Forest"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600"
+          alt="Mountains"
+        />
+      </div>
+    </section>
+
+    <section class="assignment">
+      <h2>Assignment 4: Dashboard Layout</h2>
+      <div class="dashboard">
+        <header class="d-head">HEADER</header>
+        <nav class="d-nav">NAVIGATION MENU</nav>
+        <aside class="d-left">SIDEBAR</aside>
+        <main class="d-main">MAIN CONTENT</main>
+        <aside class="d-right">ASIDE</aside>
+        <footer class="d-foot">FOOTER</footer>
+      </div>
+    </section>
+
+    <section class="assignment">
+      <h2>Assignment 5: Card Layout with Implicit Grid</h2>
+      <div class="cards">
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600"
+            alt="Flowers"
+          />
+          <div class="card-text">
+            <h3>Beautiful Flowers</h3>
+            <p>
+              Flowers add colour and beauty to nature. Explore their shapes and
+              colours.
+            </p>
+          </div>
+        </article>
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=600"
+            alt="Ocean"
+          />
+          <div class="card-text">
+            <h3>Blue Ocean</h3>
+            <p>
+              The ocean is home to diverse marine life and beautiful coastal
+              views.
+            </p>
+          </div>
+        </article>
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600"
+            alt="Landscape"
+          />
+          <div class="card-text">
+            <h3>Nature Landscape</h3>
+            <p>
+              Discover mountains, lakes and green landscapes around the world.
+            </p>
+          </div>
+        </article>
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=600"
+            alt="Wildlife"
+          />
+          <div class="card-text">
+            <h3>Wildlife</h3>
+            <p>
+              Wildlife is important for biodiversity and ecological balance.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </body>
+</html>

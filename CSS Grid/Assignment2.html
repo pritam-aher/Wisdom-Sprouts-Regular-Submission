@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment II - CSS Grid Gallery Designs</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #f2f4f7;
+        color: #222;
+        padding: 24px;
+      }
+      h1 {
+        text-align: center;
+        color: #17324d;
+        margin: 10px 0 8px;
+      }
+      .subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 28px;
+      }
+      section {
+        max-width: 1000px;
+        margin: 24px auto;
+        background: #fff;
+        padding: 24px;
+        border-radius: 10px;
+        box-shadow: 0 2px 12px #00000012;
+      }
+      h2 {
+        font-size: 20px;
+        color: #24556b;
+        margin-bottom: 16px;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .fruit-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1.3fr;
+        grid-template-rows: 100px 150px 150px;
+        gap: 8px;
+      }
+      .fruit-grid .berries {
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .fruit-grid .strawberries {
+        grid-column: 2;
+        grid-row: 1;
+      }
+      .fruit-grid .watermelon {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+      }
+      .fruit-grid .orange {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+      }
+      .fruit-grid .papaya {
+        grid-column: 1 / span 2;
+        grid-row: 3;
+      }
+      .fruit-grid .pineapple {
+        grid-column: 3;
+        grid-row: 3;
+      }
+      .tile {
+        overflow: hidden;
+        border-radius: 4px;
+      }
+      .post-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr 1fr;
+        grid-template-rows: 125px 150px 75px;
+        gap: 8px;
+      }
+      .post-grid .post1 {
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .post-grid .post2 {
+        grid-column: 2 / span 2;
+        grid-row: 1;
+      }
+      .post-grid .post3 {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+      }
+      .post-grid .post4 {
+        grid-column: 3;
+        grid-row: 2;
+      }
+      .post-grid .post5 {
+        grid-column: 1;
+        grid-row: 3;
+      }
+      .post-grid .post6 {
+        grid-column: 2;
+        grid-row: 3;
+      }
+      .post-grid .post7 {
+        grid-column: 3;
+        grid-row: 3;
+      }
+      .post {
+        position: relative;
+        overflow: hidden;
+      }
+      .post img {
+        filter: brightness(0.72);
+      }
+      .post span {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        color: white;
+        font-size: 13px;
+        font-weight: bold;
+        text-shadow: 0 1px 3px #000;
+      }
+      .animals {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 130px 130px;
+        gap: 10px;
+        background: #e2bf00;
+        padding: 12px;
+      }
+      .animals .animal {
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid #fff;
+      }
+      .animals .animal:nth-child(3) {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+      }
+      .nature {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr 1fr;
+        grid-template-rows: 130px 130px;
+        gap: 8px;
+      }
+      .nature .n1 {
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .nature .n2 {
+        grid-column: 2 / span 2;
+        grid-row: 1;
+      }
+      .nature .n3 {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+      }
+      .nature .n4 {
+        grid-column: 3;
+        grid-row: 2;
+      }
+      .portraits {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        max-width: 500px;
+        margin: auto;
+      }
+      .portraits img {
+        height: 145px;
+      }
+      .site-layout {
+        border: 5px solid #333;
+        padding: 8px;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 48px 42px 180px 48px;
+        gap: 6px;
+        max-width: 650px;
+        margin: auto;
+      }
+      .site-layout div {
+        border: 2px solid #aaa;
+        display: grid;
+        place-items: center;
+        color: #4d8745;
+        font-weight: bold;
+      }
+      .site-layout .site-header,
+      .site-layout .site-nav,
+      .site-layout .site-footer {
+        grid-column: 1 / -1;
+      }
+      .site-layout .site-main {
+        background: #f7faf7;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+        section {
+          padding: 14px;
+        }
+        .fruit-grid {
+          grid-template-rows: 80px 120px 120px;
+        }
+        .post-grid {
+          grid-template-rows: 100px 120px 65px;
+        }
+        .animals {
+          grid-template-rows: 100px 100px;
+        }
+        .nature {
+          grid-template-rows: 100px 100px;
+        }
+        .portraits img {
+          height: 110px;
+        }
+        .site-layout {
+          grid-template-columns: 1fr 2fr 1fr;
+          grid-template-rows: 40px 36px 140px 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS GRID - ASSIGNMENT II</h1>
+    <p class="subtitle">
+      Creative image galleries and page layouts using HTML and CSS Grid
+    </p>
+
+    <section>
+      <h2>1. Fruit Image Grid</h2>
+      <div class="fruit-grid">
+        <div class="tile berries">
+          <img
+            src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=600"
+            alt="Blueberries"
+          />
+        </div>
+        <div class="tile strawberries">
+          <img
+            src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=600"
+            alt="Strawberries"
+          />
+        </div>
+        <div class="tile watermelon">
+          <img
+            src="https://images.unsplash.com/photo-1563114773-84221bd62daa?w=600"
+            alt="Watermelon"
+          />
+        </div>
+        <div class="tile orange">
+          <img
+            src="https://images.unsplash.com/photo-1547514701-42782101795e?w=600"
+            alt="Oranges"
+          />
+        </div>
+        <div class="tile papaya">
+          <img
+            src="https://images.unsplash.com/photo-1517282009859-f000ec3b26fe?w=600"
+            alt="Papaya"
+          />
+        </div>
+        <div class="tile pineapple">
+          <img
+            src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=600"
+            alt="Pineapple"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Creative Social Media Post Grid</h2>
+      <div class="post-grid">
+        <div class="post post1">
+          <img
+            src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600"
+            alt="Blue landscape"
+          /><span>The winter of my discontent</span>
+        </div>
+        <div class="post post2">
+          <img
+            src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600"
+            alt="City skyline"
+          /><span>Instagram is nice but I keep posting</span>
+        </div>
+        <div class="post post3">
+          <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600"
+            alt="Ocean waves"
+          /><span>Throwing my phone into the ocean</span>
+        </div>
+        <div class="post post4">
+          <img
+            src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=600"
+            alt="Building"
+          /><span>In the new city</span>
+        </div>
+        <div class="post post5">
+          <img
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600"
+            alt="Horizon"
+          /><span>Staring at the horizon</span>
+        </div>
+        <div class="post post6">
+          <img
+            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600"
+            alt="Water"
+          /><span>This is water</span>
+        </div>
+        <div class="post post7">
+          <img
+            src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600"
+            alt="Flowers"
+          /><span>Time for a new place</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>3. Animal Image Collage</h2>
+      <div class="animals">
+        <div class="animal">
+          <img
+            src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=500"
+            alt="Cat"
+          />
+        </div>
+        <div class="animal">
+          <img
+            src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=500"
+            alt="Dog"
+          />
+        </div>
+        <div class="animal">
+          <img
+            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=500"
+            alt="Puppy"
+          />
+        </div>
+        <div class="animal">
+          <img
+            src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=500"
+            alt="Dogs"
+          />
+        </div>
+        <div class="animal">
+          <img
+            src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=500"
+            alt="Bear"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>4. Nature and Landscape Grid</h2>
+      <div class="nature">
+        <div class="tile n1">
+          <img
+            src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600"
+            alt="Lake"
+          />
+        </div>
+        <div class="tile n2">
+          <img
+            src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600"
+            alt="Sunset"
+          />
+        </div>
+        <div class="tile n3">
+          <img
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600"
+            alt="Forest"
+          />
+        </div>
+        <div class="tile n4">
+          <img
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600"
+            alt="Mountains"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>5. Portrait Gallery</h2>
+      <div class="portraits">
+        <img
+          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500"
+          alt="Portrait 1"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500"
+          alt="Portrait 2"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500"
+          alt="Portrait 3"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=500"
+          alt="Portrait 4"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500"
+          alt="Portrait 5"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500"
+          alt="Portrait 6"
+        />
+      </div>
+    </section>
+
+    <section>
+      <h2>6. Website Structure Layout</h2>
+      <div class="site-layout">
+        <div class="site-header">HEADER</div>
+        <div class="site-nav">NAVIGATION MENU</div>
+        <div>CONTENT</div>
+        <div class="site-main">MAIN CONTENT</div>
+        <div>CONTENT</div>
+        <div class="site-footer">FOOTER</div>
+      </div>
+    </section>
+  </body>
+</html>
