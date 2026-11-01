@@ -1,0 +1,1081 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form Assignment</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    padding: 30px 15px;
+    color: #222;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.section {
+    background: white;
+    padding: 35px;
+    margin-bottom: 35px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* ==================================
+   FORM 1: SIMPLE REGISTRATION
+================================== */
+
+.simple-form {
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+    padding: 30px 38px;
+    border: 3px solid #d9dfe1;
+    font-family: Georgia, serif;
+}
+
+.simple-form h1 {
+    font-size: 30px;
+    margin-bottom: 28px;
+}
+
+.simple-form p {
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.simple-form label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.simple-form input {
+    width: 100%;
+    height: 29px;
+    border: 1px solid #aaa;
+    padding: 5px;
+    margin-bottom: 2px;
+    font-family: Arial, sans-serif;
+}
+
+.simple-form button {
+    width: 100%;
+    height: 28px;
+    background: #eee;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+.simple-form .login {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.simple-form a {
+    color: #243fa0;
+}
+
+
+/* ==================================
+   FORM 2: INSTAGRAM LOGIN
+================================== */
+
+.instagram {
+    max-width: 760px;
+    margin: auto;
+    min-height: 290px;
+    background: #0b1115;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+}
+
+.insta-left {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+}
+
+.insta-logo {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 30px;
+    background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.insta-left p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.insta-left span {
+    color: #ed277b;
+}
+
+.insta-phone {
+    width: 100px;
+    height: 130px;
+    margin-top: 20px;
+    border: 5px solid #ed6b91;
+    border-radius: 15px;
+    background: linear-gradient(135deg,#ffd16b,#e94d88,#7554cf);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+}
+
+.insta-right {
+    background: #111d25;
+    padding: 30px 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-left: 1px solid #29343c;
+}
+
+.insta-right h3 {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.insta-right input {
+    width: 100%;
+    height: 38px;
+    margin-bottom: 9px;
+    background: #101a21;
+    border: 1px solid #384650;
+    border-radius: 7px;
+    padding: 10px;
+    color: white;
+    font-size: 11px;
+}
+
+.insta-right input::placeholder {
+    color: #aaa;
+}
+
+.insta-login {
+    width: 100%;
+    height: 34px;
+    border: none;
+    border-radius: 20px;
+    background: #244e91;
+    color: white;
+    cursor: pointer;
+}
+
+.forgot {
+    display: block;
+    text-align: center;
+    color: #ddd;
+    text-decoration: none;
+    font-size: 10px;
+    margin: 15px;
+}
+
+.insta-or {
+    text-align: center;
+    font-size: 12px;
+    margin: 8px;
+    color: #aaa;
+}
+
+.facebook {
+    display: block;
+    text-align: center;
+    color: #75a9ff;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 12px;
+}
+
+.create-account {
+    display: block;
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #315e9a;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #78aaff;
+    font-size: 11px;
+}
+
+
+/* ==================================
+   FORM 2: REGISTRATION DETAILS
+================================== */
+
+.details-bg {
+    max-width: 760px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #416cf0;
+}
+
+.details-form {
+    max-width: 540px;
+    margin: auto;
+    padding: 22px;
+    background: white;
+    border-radius: 3px;
+}
+
+.details-form h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.details-form h4 {
+    font-size: 10px;
+    font-weight: 400;
+    color: #777;
+    margin: 12px 0 8px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.details-grid label {
+    display: block;
+    font-size: 10px;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.details-grid input,
+.details-grid select {
+    width: 100%;
+    height: 29px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    font-size: 10px;
+    background: white;
+}
+
+.next-btn {
+    margin-top: 18px;
+    padding: 9px 25px;
+    background: #416cf0;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* ==================================
+   FORM 3: PERSONAL / COMPANY
+================================== */
+
+.compact-form {
+    width: 245px;
+    margin: auto;
+    padding: 20px;
+    background: #eee;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 3px 7px #0002;
+}
+
+.compact-form h2 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.radio-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 12px 0;
+}
+
+.radio-options label {
+    font-size: 10px;
+    color: #555;
+}
+
+.radio-options input {
+    accent-color: #4164b7;
+}
+
+.icon-input {
+    display: flex;
+    height: 31px;
+    margin: 8px 0;
+    background: white;
+    border: 1px solid #ddd;
+}
+
+.icon-input i {
+    width: 30px;
+    display: grid;
+    place-items: center;
+    background: #4164b7;
+    color: white;
+    font-size: 12px;
+}
+
+.icon-input input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    padding: 7px;
+    font-size: 10px;
+}
+
+.terms {
+    font-size: 8px;
+    color: #777;
+    line-height: 1.5;
+    width: 140px;
+}
+
+.terms a {
+    color: #4164b7;
+}
+
+.register-btn {
+    float: right;
+    background: #3659b4;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+
+/* ==================================
+   FORM 3: WELCOME BACK / SIGN UP
+================================== */
+
+.split-form {
+    max-width: 720px;
+    min-height: 310px;
+    margin: 35px auto 0;
+    padding: 18px 25px;
+    background: linear-gradient(110deg,#286b45,#a2ae00);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.welcome {
+    background: #004b57;
+    color: white;
+    border-radius: 22px 125px 125px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+}
+
+.welcome h2 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 10px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.sign-in {
+    text-decoration: none;
+    border: 1px solid white;
+    color: white;
+    padding: 7px 30px;
+    font-size: 10px;
+}
+
+.signup {
+    background: white;
+    border-radius: 0 20px 20px 0;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    width: 26px;
+    height: 26px;
+    border: 1px solid #91b4bd;
+    border-radius: 6px;
+    display: grid;
+    place-items: center;
+    color: #176072;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.signup .or {
+    margin: 10px;
+    font-weight: bold;
+}
+
+.signup p {
+    font-size: 9px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.signup form {
+    width: 100%;
+    max-width: 245px;
+}
+
+.signup input {
+    width: 100%;
+    height: 30px;
+    background: #d4d4d4;
+    border: none;
+    margin-bottom: 8px;
+    padding: 8px;
+    font-size: 10px;
+}
+
+.signup button {
+    display: block;
+    margin: auto;
+    width: 110px;
+    height: 30px;
+    background: #a7b900;
+    border: none;
+    color: white;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+
+/* ==================================
+   FORM 4: SCHOOL CHAMPIONSHIP
+================================== */
+
+.school-form {
+    max-width: 620px;
+    margin: auto;
+    padding: 28px;
+    background: linear-gradient(140deg,#dfa7f3,#c4d9fa,#72eeee);
+    border-top: 2px solid #b9a3df;
+}
+
+.school-form h2 {
+    font-size: 22px;
+    font-weight: 400;
+    color: #655b86;
+    margin-bottom: 20px;
+}
+
+.school-field {
+    margin-bottom: 14px;
+}
+
+.school-field label {
+    display: block;
+    font-size: 11px;
+    color: #64728c;
+    margin-bottom: 7px;
+}
+
+.school-field label span {
+    color: red;
+}
+
+.school-field input {
+    width: 100%;
+    height: 35px;
+    border: 1px solid #e6eaf0;
+    border-radius: 2px;
+    background: white;
+    padding: 8px;
+    font-size: 11px;
+}
+
+.two-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.verification {
+    width: 210px;
+    margin: 20px auto;
+}
+
+.verification p {
+    font-size: 11px;
+    color: #64728c;
+    margin-bottom: 8px;
+}
+
+.robot {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 10px;
+}
+
+.robot input {
+    width: 16px;
+    height: 16px;
+}
+
+.recaptcha {
+    margin-left: auto;
+    text-align: center;
+    color: #4285d4;
+    font-size: 19px;
+}
+
+.recaptcha small {
+    display: block;
+    font-size: 7px;
+    color: #777;
+}
+
+.submit-btn {
+    display: block;
+    margin: auto;
+    background: #1456c5;
+    color: white;
+    border: none;
+    padding: 11px 28px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.submit-btn i {
+    margin-right: 6px;
+}
+
+
+/* ==================================
+   RESPONSIVE CSS
+================================== */
+
+@media(max-width:650px) {
+
+    .section {
+        padding: 18px 13px;
+    }
+
+    .instagram {
+        grid-template-columns: 1fr;
+    }
+
+    .insta-left {
+        min-height: 250px;
+    }
+
+    .insta-right {
+        border-left: none;
+        border-top: 1px solid #29343c;
+    }
+
+    .details-bg {
+        padding: 12px;
+    }
+
+    .details-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .split-form {
+        grid-template-columns: 1fr;
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .welcome {
+        min-height: 190px;
+        border-radius: 18px 18px 70px 18px;
+    }
+
+    .signup {
+        min-height: 250px;
+        border-radius: 18px;
+    }
+}
+
+@media(max-width:380px) {
+
+    .details-grid,
+    .two-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .simple-form {
+        padding: 22px 18px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- FORM 1 -->
+
+<section class="section">
+
+<h2 class="section-title">Assignment 1 - Registration Form</h2>
+
+<div class="simple-form">
+
+<h1>Register</h1>
+
+<p>Kindly fill in this form to register.</p>
+
+<form>
+
+<label>Username</label>
+<input type="text" placeholder="Enter username" required>
+
+<label>Email</label>
+<input type="email" placeholder="Enter Email" required>
+
+<label>Password</label>
+<input type="password" placeholder="Enter Password" required>
+
+<label>Repeat Password</label>
+<input type="password" placeholder="Repeat Password" required>
+
+<button type="submit">Register</button>
+
+</form>
+
+<div class="login">
+Already have an account? <a href="#">Log in</a>.
+</div>
+
+</div>
+</section>
+
+
+<!-- FORM 2 -->
+
+<section class="section">
+
+<h2 class="section-title">Assignment 2 - Login and Registration</h2>
+
+<div class="instagram">
+
+<div class="insta-left">
+
+<i class="fa-brands fa-instagram insta-logo"></i>
+
+<p>
+See everyday moments from<br>
+your <span>close friends.</span>
+</p>
+
+<div class="insta-phone">
+<i class="fa-solid fa-camera-retro"></i>
+</div>
+
+</div>
+
+<div class="insta-right">
+
+<h3>Log into Instagram</h3>
+
+<form>
+
+<input type="text" placeholder="Phone number, username or email">
+
+<input type="password" placeholder="Password">
+
+<button class="insta-login" type="submit">Log in</button>
+
+<a href="#" class="forgot">Forgot password?</a>
+
+<div class="insta-or">OR</div>
+
+<a href="#" class="facebook">
+<i class="fa-brands fa-facebook"></i>
+Log in with Facebook
+</a>
+
+<a href="#" class="create-account">Create new account</a>
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- REGISTRATION DETAILS -->
+
+<div class="details-bg">
+
+<form class="details-form">
+
+<h2>Registration</h2>
+
+<h4>Personal Details</h4>
+
+<div class="details-grid">
+
+<div>
+<label>Full Name</label>
+<input type="text" placeholder="Enter your name">
+</div>
+
+<div>
+<label>Date of Birth</label>
+<input type="date">
+</div>
+
+<div>
+<label>Email</label>
+<input type="email" placeholder="Enter your email">
+</div>
+
+<div>
+<label>Mobile Number</label>
+<input type="tel" placeholder="Enter mobile number">
+</div>
+
+<div>
+<label>Gender</label>
+<select>
+<option>Select your gender</option>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+</div>
+
+<div>
+<label>Occupation</label>
+<input type="text" placeholder="Enter occupation">
+</div>
+
+</div>
+
+<h4>Identity Details</h4>
+
+<div class="details-grid">
+
+<div>
+<label>ID Type</label>
+<select>
+<option>Select ID type</option>
+<option>Aadhaar Card</option>
+<option>PAN Card</option>
+<option>Passport</option>
+</select>
+</div>
+
+<div>
+<label>ID Number</label>
+<input type="text" placeholder="Enter ID number">
+</div>
+
+<div>
+<label>Issue Authority</label>
+<input type="text" placeholder="Enter issue authority">
+</div>
+
+<div>
+<label>Issue Date</label>
+<input type="date">
+</div>
+
+<div>
+<label>Issue State</label>
+<input type="text" placeholder="Enter issue state">
+</div>
+
+<div>
+<label>Expiry Date</label>
+<input type="date">
+</div>
+
+</div>
+
+<button class="next-btn" type="submit">
+Next <i class="fa-solid fa-arrow-right"></i>
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- FORM 3 -->
+
+<section class="section">
+
+<h2 class="section-title">Assignment 3 - Personal / Company Registration</h2>
+
+<div class="compact-form">
+
+<h2>Registration</h2>
+
+<form>
+
+<div class="radio-options">
+
+<label>
+<input type="radio" name="account" checked> Personal
+</label>
+
+<label>
+<input type="radio" name="account"> Company
+</label>
+
+</div>
+
+<div class="icon-input">
+<i class="fa-solid fa-envelope"></i>
+<input type="email" placeholder="Email">
+</div>
+
+<div class="icon-input">
+<i class="fa-solid fa-user"></i>
+<input type="text" placeholder="Name">
+</div>
+
+<div class="icon-input">
+<i class="fa-solid fa-lock"></i>
+<input type="password" placeholder="Password">
+</div>
+
+<div class="radio-options">
+
+<label>
+<input type="radio" name="gender" checked> Male
+</label>
+
+<label>
+<input type="radio" name="gender"> Female
+</label>
+
+</div>
+
+<div class="terms">
+By clicking Register, you agree to our
+<a href="#">terms and conditions</a>.
+</div>
+
+<button class="register-btn" type="submit">Register</button>
+
+<div style="clear:both"></div>
+
+</form>
+
+</div>
+
+
+<!-- WELCOME BACK -->
+
+<div class="split-form">
+
+<div class="welcome">
+
+<h2>Welcome Back!</h2>
+
+<p>
+Provide your personal details to use all features
+</p>
+
+<a href="#" class="sign-in">SIGN IN</a>
+
+</div>
+
+<div class="signup">
+
+<h2>Register With</h2>
+
+<div class="social-icons">
+
+<a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+<a href="#"><i class="fa-brands fa-github"></i></a>
+<a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+
+</div>
+
+<div class="or">OR</div>
+
+<p>Fill Out The Following Info For Registration</p>
+
+<form>
+
+<input type="text" placeholder="Name">
+
+<input type="email" placeholder="Email">
+
+<input type="password" placeholder="Password">
+
+<button type="submit">SIGN UP</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FORM 4 -->
+
+<section class="section">
+
+<h2 class="section-title">Assignment 4 - School Championship</h2>
+
+<div class="school-form">
+
+<h2>School Championship Registration Form</h2>
+
+<form>
+
+<div class="school-field">
+
+<label>School name:<span>*</span></label>
+<input type="text" required>
+
+</div>
+
+<div class="school-field">
+
+<label>Schooler name:<span>*</span></label>
+
+<div class="two-inputs">
+<input type="text" placeholder="First" required>
+<input type="text" placeholder="Last" required>
+</div>
+
+</div>
+
+<div class="school-field">
+
+<label>Parent name:<span>*</span></label>
+
+<div class="two-inputs">
+<input type="text" placeholder="First" required>
+<input type="text" placeholder="Last" required>
+</div>
+
+</div>
+
+<div class="school-field">
+
+<label>Parent phone:<span>*</span></label>
+<input type="tel" placeholder="### ### ####" required>
+
+</div>
+
+<div class="school-field">
+
+<label>Parent email:<span>*</span></label>
+<input type="email" required>
+
+</div>
+
+<div class="school-field">
+
+<label>Preferred sport:<span>*</span></label>
+<input type="text" required>
+
+</div>
+
+<div class="verification">
+
+<p>Verification<span>*</span></p>
+
+<div class="robot">
+
+<input type="checkbox">
+
+I'm not a robot
+
+<div class="recaptcha">
+<i class="fa-solid fa-rotate"></i>
+<small>reCAPTCHA</small>
+</div>
+
+</div>
+
+</div>
+
+<button class="submit-btn" type="submit">
+<i class="fa-solid fa-play"></i> Submit
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+</div>
+
+</body>
+</html>
